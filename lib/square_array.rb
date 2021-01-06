@@ -2,17 +2,32 @@
 
 
 def square_array(array)
-  counter = 0 
+  i = 0 
+  new_array = Array.new(array.length)
   while counter < array.length 
-    new_array = array.index ** 2 
+    new_array[i] = array[counter] ** 2 
     counter += 1
   end
 end
 
+
 def square_array(numbers)
-  count = 0
-  while count < numbers.length do
-    numbers.index ** 2 
+  # Allocate an array with the same size as `numbers`
+  # so that the runtime does not have to resize it from time to time
+  result = Array.new(numbers.size)
+
+  # The index
+  i = 0
+
+  while i < numbers.size
+    # Fill the result array
+    result[i] = numbers[i] ** 2
+
+    # and don't forget to increase the index,
+    # otherwise the loop will run forever.
+    i += 1
   end
-  square_array(numbers)
-end 
+
+  # Return the result array
+  result
+end
