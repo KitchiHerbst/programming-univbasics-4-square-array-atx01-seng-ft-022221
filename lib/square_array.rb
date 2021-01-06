@@ -8,7 +8,7 @@ def square_array(array)
     new_array[i] = array[i] ** 2 
     i += 1
   end
-  result
+  new_array
 end
 
 
